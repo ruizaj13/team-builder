@@ -19,7 +19,7 @@ function MemberForm(){
 
             <br/>
             <br/>
-            
+
             <label>
                 Role:
                 <select>
@@ -28,6 +28,9 @@ function MemberForm(){
                     <option>Just Here To Vibe</option>
                 </select>
             </label>
+            <br/>
+            <br/>
+            <button>Submit</button>
         </form>
     
     )
