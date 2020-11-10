@@ -1,6 +1,11 @@
 import React from 'react';
 
 function MemberForm(){
+
+    const submitClick = (event) =>{
+        event.preventDefault();
+    };
+
     return(
     
         <form>
@@ -30,7 +35,7 @@ function MemberForm(){
             </label>
             <br/>
             <br/>
-            <button>Submit</button>
+            <button onClick={submitClick}>Submit</button>
         </form>
     
     )
