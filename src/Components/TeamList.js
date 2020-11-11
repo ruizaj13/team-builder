@@ -9,7 +9,7 @@ export default function TeamList(props){
         <div>
             <h2>Team Members:</h2>
             <div>
-                <li>{}</li>
+                
             </div>
         </div>
     )
