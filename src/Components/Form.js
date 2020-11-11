@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function MemberForm(){
+export default function MemberForm({newMember}){
 
     const [inputData, setInputData] = useState({
         memberName: '',
@@ -17,27 +17,33 @@ export default function MemberForm(){
 
     const submitClick = (event) =>{
         event.preventDefault();
+        newMember(inputData);
+        setInputData({
+            memberName: '',
+            memberEmail: '',
+            memberRole: ''
+        });
     };
 
     return(
-        <div>  
-            <form>
+        <div >  
+            <form onSubmit={submitClick}>
                 <label>
-                    Name: <input name='memberName' onChange={inputChange} type='text' placeholder='Your Name' id='nameInput'/>
+                    Name: <input value={inputData.memberName} name='memberName' onChange={inputChange} type='text' placeholder='Your Name' id='nameInput'/>
                 </label>
 
                 <br/>
                 <br/>
 
                 <label>
-                    Email: <input name='memberEmail' onChange={inputChange} type='text' placeholder='Your Email' id='emailInput'/>
+                    Email: <input value={inputData.memberEmail} name='memberEmail' onChange={inputChange} type='text' placeholder='Your Email' id='emailInput'/>
                 </label>
 
                 <br/>
                 <br/>
 
                 <label>
-                 Role: <select name='memberRole' onChange={inputChange} id='roleInput'>
+                 Role: <select value={inputData.memberRole} name='memberRole' onChange={inputChange} id='roleInput'>
                         <option>--Select A Role--</option>
                         <option>Front-End</option>
                         <option>Back-End</option>
@@ -46,7 +52,7 @@ export default function MemberForm(){
                 </label>
                 <br/>
                 <br/>
-                <button onClick={submitClick}>Submit</button>
+                <button>Submit</button>
             </form>
         </div> 
     )
